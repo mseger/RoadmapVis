@@ -1,0 +1,71 @@
+extends layout
+
+block content
+    title= title
+
+    div.row.container-narrow
+        div.span3.offset3.well(id="project-create")
+            form(name="new-project", action="/project/new", method="post")
+                h3 Create a New Project
+                label Title: 
+                br
+                input(type="text", name= "title")
+                br
+                br
+                label Owner: 
+                br
+                input(type="text", name="owner")
+                br
+                br
+                label Description: 
+                br
+                input(type="text", name="description")
+                br
+                br
+                label Task URL: 
+                br
+                input(type="text", name="task_URL")
+                br
+                br
+                label Duration: 
+                br
+                input(type="text", name="duration")
+                br
+                br
+                label Start: 
+                br
+                input(type="text", name="start")
+                br
+                br
+                label End: 
+                br
+                input(type="text", name="end")
+                br
+                br
+                label Goal Tag: 
+                br
+                input(type="text", name="goal_tag")
+                br
+                br
+                label Staffing Needs (Number Needed):
+                br
+                input(type="text", name="num_people_needed")
+                br
+                br
+                button.btn(type="submit", id="new-project-submit")
+                    | Create New Project
+
+    div.row.container-narrow
+        div.span11.offset3.center.well
+            each project, i in projects
+                div.well(style="background-color: #CFCFCF")
+                    div.well
+                        div.row(value=project, id="project-object")
+                            span.span3
+                            h1 Project: 
+                            br
+                            h3 Title: 
+                            | #{project.title}
+                            br
+                            h3 Owner: 
+                            | #{project.owner}
