@@ -21,9 +21,12 @@ app.configure(function(){
 	app.set('view engine', 'jade');
 	app.use(express.favicon());
 	app.use(express.logger('dev'));
+	app.use(express.bodyParser());
 	app.use(express.json());
 	app.use(express.urlencoded());
 	app.use(express.methodOverride());
+	app.use(express.session());
+	app.use(Facebook.middleware({appId: process.env.FACEBOOK_APPID, secret: process.env.FACEBOOK_SECRET}));
 	app.use(app.router);
 	app.use(express.static(path.join(__dirname, 'public')));
 }); 
@@ -34,10 +37,14 @@ app.configure('development', function(){
 	mongoose.connect(process.env.MONGOLAB_URI || 'localhost');
 })
 
+// global for FB permissions
+global.scope = ['read_friendlists', 'publish_stream']; 
+
 // GETS
 app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/projects', project.display);
+app.get('/login', Facebook.loginRequired({scope: scope}), user.login);
+app.get('/users', Facebook.loginRequired({scope: scope}), user.list);
+app.get('/projects', Facebook.loginRequired({scope: scope}), project.displayProjects);
 
 
 // PUTS

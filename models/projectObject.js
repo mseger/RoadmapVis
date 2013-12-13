@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'), Schema = mongoose.Schema
 
-var ProjectObjectSchema = new Schema({
+var ProjectSchema = new Schema({
 	title: String, 
 	owner: String, 
 	description: String, 
@@ -12,6 +12,6 @@ var ProjectObjectSchema = new Schema({
 	num_people_needed: Number
 }); 
 
-var ProjectObject = mongoose.model('ProjectObject', ProjectObjectSchema);
+var Project = mongoose.model('Project', ProjectSchema);
 
-module.exports = ProjectObject; 
+module.exports = Project; 
