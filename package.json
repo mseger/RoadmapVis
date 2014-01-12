@@ -1,20 +1,20 @@
 {
-  "name": "RoadmapVis",
+  "name": "mashup",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app"
   },
   "dependencies": {
-    "express": "3.x",
+    "express": "3.0.6",
     "jade": "*",
     "mongoose": "3.x",
-    "fb": "0.1.0", 
-    "async": "*", 
     "facebook-node-sdk": "*", 
+    "async" : "x"
   },
     "engines": {
-    "node": "0.8.14 ",
-    "npm": "1.1.65"
+    "node": "0.10.x",
+    "npm": "1.2.x"
+
   }
 }

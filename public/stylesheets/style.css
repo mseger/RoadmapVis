@@ -1,8 +1,72 @@
 body {
-  padding: 50px;
+  padding: 100px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.site-navbar{
+	margin-top: -50px;
+}
+
+#declaration-explanatory-text{
+	margin-bottom: 10px;
+}
+
+#story-behind-course-plan{
+	margin-bottom: 10px;
+}
+
+#courses-for-concentration{
+	margin-bottom: 10px;
+}
+
+#course-plan-textarea{
+	margin-top: 20px;
+	width: 600px;
+	height: 300px;
+}
+
+#check-overlap-allOlin{
+}
+
+#student-sig{
+	margin-top: 20px;
+}
+
+#credits-sig{
+	margin-top: 20px;
+}
+
+#breadth-sig{
+	margin-top: 20px;
+}
+
+#EPG-sig{
+	margin-top: 20px;
+}
+
+.formInfo {
+	font-weight: bold;
+}
+
+.instructions {
+	font-style: italic;
+	color: #666;
+}
+
+.display-textbox {
+	border: 1px solid black;
+	padding: 1em;
+}
+
+#spinner {
+	margin: 10px;
+	display: none;
+}
+
+.whoops {
+	color:red;
 }
